@@ -1,17 +1,34 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Duy v-bind:unit="unit"  msg="Alo ALo!" v-on:keuGoiThayDOi="changeUnit"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Duy from './components/Duy.vue'
 
 export default {
   name: 'App',
+  data: () => ({
+    unit: 'aaa',
+    scarest: [{
+      name: 'Dipe'
+    }, {
+      name: 'ChuThang'
+    }, {
+      name: 'AQuan'
+    }, {
+      name: 'Co'
+    }]
+  }),
+  methods: {
+    changeUnit: function () {
+      this.unit = 'bbbbb'
+    }
+  },
   components: {
-    HelloWorld
+    Duy,
   }
 }
 </script>
